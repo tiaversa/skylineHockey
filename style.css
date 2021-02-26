@@ -1,0 +1,182 @@
+:root{
+    --color-DarkBlue: #001d3d;
+    --color-MiddleBlue: #003566;
+    --color-lightBlue:#00509d;
+    --color-gold:#fdc500;
+    --color-yellow: #ffd500;
+}
+body{
+    box-sizing: border-box;
+    background-color: var(--color-DarkBlue);
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+    overflow-x: hidden;
+}
+/*navegation bar area*/
+nav{
+    z-index: 5;
+    position: sticky;
+    top: 0;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 8vh;
+    background-color: #001d3d4d;
+}
+.navLinks{
+    height: 6vh;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.item a{
+    position: relative;
+    text-decoration: none;
+    font-size: 2.5vh;
+    color: var(--color-gold);
+}
+.logo{
+    display: none;
+    margin: 0% 0% 0% 20px;
+}
+.logo img{
+    transform: rotateY(180deg);
+    height: 10vh;
+}
+/*burger area*/
+.boxBurger{
+    display: none;
+    float: right;
+    margin: 0% 20px 0% 0%;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.boxBurger:hover{
+    background-color: var(--color-gold);
+}
+.boxBurger div{
+    height: 3px;
+    width: 20px;
+    background-color: snow;
+    margin: 7px;
+}
+
+/*when burger menu selected*/
+@keyframes sandwich{
+    0%{transform: rotate(0deg);}
+    /*50%{transform: rotate(180deg);}*/
+    100%{transform: rotate(180deg);}
+}
+.toggle .burger1{
+    transform: rotate(-45deg) translate(-8px,6px);
+}
+.toggle .burger2{
+    opacity: 0;
+}
+.toggle .burger3{
+    transform: rotate(45deg) translate(-8px,-6px);
+}
+
+
+
+/*Tab Nav Mobile Only*/
+.tabNav{
+    z-index: 2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #001d3d4d;
+    height: 5vh;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+}
+.tabNav a{
+    text-decoration: none;
+    font-size: 2vh;
+    color: snow;
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+.tabNav a:hover{
+    background-color: var(--color-lightBlue);
+    border: 1px solid var(--color-gold);
+}
+
+
+
+
+
+/*home area*/
+#home{
+    height: 60vh;
+}
+.actionLink{
+    text-decoration: none;
+    
+}
+
+
+
+
+
+/*About us area*/
+#aboutUs{
+    background-color: var(--color-lightBlue);
+    min-height: 60vh;
+}
+/*Players area*/
+#players{
+    background-color: var(--color-gold);
+    min-height: 60vh;
+}
+/*games area*/
+#games{
+    background-color: var(--color-lightBlue);
+    min-height: 60vh;
+}
+/*media area*/
+#media{
+    min-height: 60vh;
+}
+/*contact us area*/
+#contactUs{
+    background-color: var(--color-gold);
+    min-height: 60vh;
+}
+
+/*making the mobile*/
+@media screen and (max-width:600px){
+    .boxBurger, .logo{
+        display: block;
+    }
+    .schoolSymble{
+        display: none;
+    }
+    .navLinks{
+        position: absolute;
+        top:6vh;
+        right: 0;
+        height: 87vh;
+        width: 50%;
+        background-color: snow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    /*make the nav Links fade in*/
+    .navLinks li{
+        opacity: 1;
+    }
+}
+/*make the menu come from the side*/
+.nav-active{
+    transform: translateX(0%);
+}
